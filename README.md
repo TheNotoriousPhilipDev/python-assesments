@@ -1,16 +1,41 @@
 ## Problema:
 
-El problema consiste en determinar si un año dado es un año bisiesto o no. En el calendario gregoriano, un año bisiesto ocurre aproximadamente cada cuatro años, añadiendo un día extra al calendario en forma de un 29 de febrero. Sin embargo, existen algunas excepciones a esta regla.
+Cuando los usuarios publican una actualización en las redes sociales, como una URL, imagen, actualización de estado, etc., otros usuarios en su red pueden ver esta nueva publicación en su feed de noticias. Los usuarios también pueden ver exactamente cuándo se publicó la publicación, es decir, cuántas horas, minutos o segundos han pasado desde entonces. Dado que a veces las publicaciones se publican y se ven en diferentes zonas horarias, esto puede ser confuso. Se te proporcionan dos marcas de tiempo de una de esas publicaciones que un usuario puede ver en su feed de noticias en el siguiente formato:
 
-### Condiciones para determinar un año bisiesto en el calendario gregoriano:
-1. Si el año es divisible uniformemente por 4, es un año bisiesto, a menos que:
-2. El año es divisible uniformemente por 100, entonces NO es un año bisiesto, a menos que:
-3. El año también es divisible uniformemente por 400. En este caso, es un año bisiesto.
+Day dd Mon yyyy hh:mm:ss +xxxx
 
-## Solución:
+Aquí +xxxx representa la zona horaria. Tu tarea es imprimir la diferencia absoluta (en segundos) entre ellos.
 
-Para resolver el problema, se utiliza una función llamada `is_leap(year)` que toma un año como entrada y devuelve `True` si el año es bisiesto según las condiciones mencionadas, y `False` en caso contrario. La función utiliza la lógica de las condiciones especificadas en el enunciado para determinar si el año es bisiesto o no.
+### Formato de Entrada:
 
-Primero, se verifica si el año es divisible uniformemente por 4. Si es así, se comprueba si es divisible uniformemente por 100. Si lo es, se verifica si también es divisible uniformemente por 400. Si cumple con todas estas condiciones, se establece la variable `leap` en `True`, indicando que el año es bisiesto. En cualquier otro caso, la variable `leap` se mantiene en `False`.
+La primera línea contiene , el número de casos de prueba.
 
-Una vez que se ha determinado si el año es bisiesto o no utilizando la función `is_leap(year)`, se imprime el resultado. Esto se hace leyendo el año desde la entrada estándar y luego llamando a la función `is_leap(year)` con ese año como argumento. El resultado se imprime en la salida estándar.
+Cada caso de prueba contiene  líneas, representando la marca de tiempo  y la marca de tiempo .
+
+### Restricciones:
+
+- La entrada contiene solo marcas de tiempo válidas.
+
+### Formato de Salida:
+
+Imprime la diferencia absoluta  en segundos.
+
+### Ejemplo de Entrada:
+
+Sun 10 May 2015 13:54:36 -0700
+Sun 10 May 2015 13:54:36 -0000
+Sat 02 May 2015 19:54:36 +0530
+Fri 01 May 2015 13:54:36 -0000
+
+
+### Ejemplo de Salida:
+
+25200
+88200
+
+### Explicación:
+
+En la primera consulta, cuando comparamos la hora en UTC para ambas marcas de tiempo, vemos una diferencia de 7 horas, que es 25200 segundos.
+
+Similarmente, en la segunda consulta, la diferencia de tiempo es de 5 horas y 30 minutos para ajustar la zona horaria, por lo que tenemos una diferencia de 1 día y 30 minutos, lo que equivale a 88200 segundos.
+
