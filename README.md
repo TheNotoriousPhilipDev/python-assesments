@@ -46,3 +46,5 @@ time_format = '%a %d %b %Y %H:%M:%S %z'
 
 El cual el primero es el formato que nos dieron y lo ultimo seria la formula a utilizar
 
+https://www.hackerrank.com/challenges/python-time-delta/problem?isFullScreen=true
+
