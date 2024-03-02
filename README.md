@@ -34,4 +34,15 @@ Explanation 0
 
 In the first query, when we compare the time in UTC for both the time stamps, we see a difference of 7 hours. which is  seconds or  seconds.
 
-Similarly, in the second query, time difference is 5 hours and 30 minutes for time zone adjusting for that we have a difference of 1 day and 30 minutes. Or 
+Similarly, in the second query, time difference is 5 hours and 30 minutes for time zone adjusting for that we have a difference of 1 day and 30 minutes. Or
+
+
+//SOLUCION 
+tuve que agregar esto 
+time_format = '%a %d %b %Y %H:%M:%S %z'
+    t1 = datetime.strptime(t1, time_format)
+    t2 = datetime.strptime(t2, time_format)
+    return str(int(abs((t1-t2).total_seconds())))   
+
+El cual el primero es el formato que nos dieron y lo ultimo seria la formula a utilizar
+
